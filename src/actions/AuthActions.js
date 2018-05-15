@@ -90,11 +90,3 @@ const loginUserSuccess = (dispatch, user) => {
 	userProfileFetch();
 	Actions.main();
 };
-
-//tech-stack
-export const selectLibrary = (libraryId) => {
-	return {
-		type: 'select_library',
-		payload: libraryId
-	};
-};

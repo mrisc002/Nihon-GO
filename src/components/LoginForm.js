@@ -315,7 +315,7 @@ class LoginForm extends Component {
 					<View style={styles.loginView}>
 						<View style={styles.loginTitle}>
 							<View style={{flexDirection: 'row'}}>
-								<Text style={styles.headerText}>Nihon-GO</Text>
+								<Text style={styles.headerText}>NIHON-GO</Text>
 							</View>
 						</View>
 						

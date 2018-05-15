@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux';
 import AuthReducer from './AuthReducer'; //authentication
-import SelectionReducer from './SelectionReducer'; //tech-stack
 import UserReducer from './UserReducer'; //user profile
 import ItineraryFormReducer from './ItineraryFormReducer';
 import ItineraryReducer from './ItineraryReducer';
@@ -13,7 +12,6 @@ import FavItnReducer from './FavItnReducer';
 
 export default combineReducers({
 	auth: AuthReducer, //authentication
-	selectedLibraryId: SelectionReducer, //tech-stack
 	user: UserReducer, //user profile
 	itineraries: ItineraryReducer,
 	itineraryForm: ItineraryFormReducer,

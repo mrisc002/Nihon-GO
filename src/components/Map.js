@@ -136,8 +136,8 @@ class Map extends Component {
 							x="9"
 							y="68.852448"
 					>
-							<TSpan>Click on a region</TSpan>
-							<TSpan  x="13" dy="15">to Explore Japan!</TSpan>
+							<TSpan>Click On A Region</TSpan>
+							<TSpan  x="13" dy="15">To Explore Japan!</TSpan>
 					</Text>
 					<G
 						delayPressIn={0}
