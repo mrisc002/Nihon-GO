@@ -1,21 +1,48 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { AppRegistry, View } from 'react-native';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware  } from 'redux';
+import firebase from 'firebase';
+import ReduxThunk from 'redux-thunk';
+import reducers from './src/reducers';
+import Router from './src/Router';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
-    );
-  }
+// Redux things
+const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+
+export default class App extends Component {
+	constructor(){
+		super();
+		console.ignoredYellowBox = [
+			'Setting a timer'
+		];
+	}
+    
+	componentWillMount() {
+		// Initialize Firebase
+		const config = {
+			apiKey: "AIzaSyAlqk-VtZdT_j8HGxc8TLQi5UUxwJVrQuY",
+			authDomain: "nihon-go-fiu.firebaseapp.com",
+			databaseURL: "https://nihon-go-fiu.firebaseio.com",
+			projectId: "nihon-go-fiu",
+			storageBucket: "nihon-go-fiu.appspot.com",
+			messagingSenderId: "75675857241"
+		};
+
+		firebase.initializeApp(config);
+	}
+
+	// Render application
+	render() {
+
+		// Home view
+		return (
+			// TIP: Provider ONLY allows one component
+			<Provider store={store}>
+				<Router />
+			</Provider>
+		);
+	}
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+AppRegistry.registerComponent('Nihon-GO', () => App);
